@@ -3,10 +3,15 @@ name: 'Terraform'
 on:
     push:
         branches: ["main"]
+    pull_request:
+        branches: ["main"]
 
+env:
+    AWS_REGION: ${{ secrets.AWS_REGION }}
 jobs:
   branch-filter:
     runs-on: ubuntu-latest
     steps:
     - name: echo
-      run: echo hel
+      run: echo ${{ env.AWS_REGION }}
+      
