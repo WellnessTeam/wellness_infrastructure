@@ -7,7 +7,3 @@ module "vpc" {
   cluster_base_name    = var.cluster_base_name
   availability_zones   = var.availability_zones
 }
-
-module "backend_state" {
-  source = "./state"
-}
