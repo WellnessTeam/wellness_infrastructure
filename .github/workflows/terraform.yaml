@@ -37,8 +37,8 @@ jobs:
       run: terraform fmt -check
     
     - name: Terraform Plan
-      run: terraform plan -input=false "key_name=${{secrets.KEY_NAME}}" -var "iam_user_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID}}" -var "iam_user_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+      run: terraform plan -input=false -var "key_name=${{secrets.KEY_NAME}}" -var "iam_user_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID}}" -var "iam_user_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main'
-      run: terraform apply -auto-approve -input=false "key_name=${{secrets.KEY_NAME}}" -var "iam_user_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID}}" -var "iam_user_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+      run: terraform apply -auto-approve -input=false -var "key_name=${{secrets.KEY_NAME}}" -var "iam_user_access_key_id=${{ secrets.AWS_ACCESS_KEY_ID}}" -var "iam_user_secret_access_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
