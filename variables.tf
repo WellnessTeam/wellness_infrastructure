@@ -52,7 +52,7 @@ variable "worker_node_instance_type" {
 }
 
 variable "worker_node_count" {
-  description = "Number of worker nodes"
+  description = "Number of worker node"
   type        = number
   default     = 3
 }
