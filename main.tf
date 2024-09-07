@@ -14,6 +14,7 @@ module "vpc" {
 module "efs" {
   source                = "./modules/efs"
   vpc_id                = module.vpc.vpc_id
+  vpc_cidr              = var.vpc_cidr
   public_subnet_ids     = module.vpc.public_subnet_ids
   cluster_base_name     = var.cluster_base_name
   efs_security_group_id = module.efs.efs_security_group_id
