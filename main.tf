@@ -24,7 +24,6 @@ module "efs" {
 module "ec2" {
   source              = "./modules/ec2"
   vpc_id              = module.vpc.vpc_id
-  vpc_cidr            = var.vpc_cidr
   public_subnet_id    = module.vpc.public_subnet_ids[0]
   cluster_base_name   = var.cluster_base_name
   instance_type       = var.instance_type
