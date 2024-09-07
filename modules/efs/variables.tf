@@ -3,21 +3,21 @@ variable "vpc_id" {
   type        = string
 }
 variable "vpc_cidr" {
-    description = "CIDR block for the VPC"
-    type = string
+  description = "CIDR block for the VPC"
+  type        = string
 }
 
 variable "public_subnet_ids" {
-    description = "List of public subnet IDs"
-    type = list(string)
+  description = "List of public subnet IDs"
+  type        = list(string)
 }
 
 variable "efs_security_group_id" {
-    description = "Security Group ID for EFS"
-    type = string
+  description = "Security Group ID for EFS"
+  type        = string
 }
 
 variable "cluster_base_name" {
-    description = "Base name for the cluster"
-    type = string
+  description = "Base name for the cluster"
+  type        = string
 }
