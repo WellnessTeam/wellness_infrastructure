@@ -2,6 +2,8 @@ resource "aws_security_group" "eksctl_host_sg" {
   vpc_id = var.vpc_id
 
   ingress {
+    from_port = 22
+    to_port = 22
     protocol    = "-1"
     cidr_blocks = [var.sg_ingress_ssh_cidr]
   }
