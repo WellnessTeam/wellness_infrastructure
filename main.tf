@@ -40,7 +40,7 @@ module "s3_backend" {
 }
 
 module "dynamodb_backend" {
-  source             = "./modules/dynamodb"
+  source              = "./modules/dynamodb"
   dynamodb_table_name = "terraform-lock-table"
 }
 
