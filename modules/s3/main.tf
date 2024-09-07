@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "tfstate" {
   lifecycle {
     prevent_destroy = true
   }
-  
+
   tags = {
     Name = "Terraform State Storage"
   }

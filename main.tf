@@ -34,17 +34,13 @@ module "ec2" {
   user_data           = file("${path.module}/modules/ec2/user_data.sh")
 }
 
-# S3 모듈 호출
 module "s3_backend" {
-  source = "./modules/s3"
-
+  source         = "./modules/s3"
   s3_bucket_name = "wellness-infra-terraform"
 }
 
-# DynamoDB 모듈 호출
 module "dynamodb_backend" {
-  source = "./modules/dynamodb"
-
+  source             = "./modules/dynamodb"
   dynamodb_table_name = "terraform-lock-table"
 }
 

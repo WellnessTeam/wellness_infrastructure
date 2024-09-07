@@ -86,3 +86,4 @@ variable "private_subnet_cidrs" {
   type        = list(string)
   default     = ["192.168.11.0/24", "192.168.12.0/24", "192.168.13.0/24"]
 }
+
