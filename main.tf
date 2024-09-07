@@ -13,11 +13,11 @@ module "vpc" {
 # EFS 모듈 호출
 module "efs" {
   source                = "./modules/efs"
-  vpc_cidr              = var.vpc_cidr
+  vpc_id = module.vpc.vpc_id
   public_subnet_ids     = module.vpc.public_subnet_ids
-  efs_security_group_id = aws_security_group.efs_sg.id
   cluster_base_name     = var.cluster_base_name
 }
+efs_security_group_id = module.efs.efs_security_group_id
 
 # EC2 모듈 호출
 module "ec2" {

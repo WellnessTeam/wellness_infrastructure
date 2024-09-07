@@ -27,5 +27,6 @@ resource "aws_instance" "eksctl_host" {
     Name = "${var.cluster_base_name}-bastion-EC2"
   }
 
-  user_data = var.user_data
+user_data = file("${path.module}/modules/ec2/user_data.sh")
+
 }
