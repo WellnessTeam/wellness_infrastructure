@@ -1,7 +1,16 @@
 resource "aws_security_group" "eksctl_host_sg" {
   vpc_id = var.vpc_id
 
+  # Ingress rule (SSH or all traffic inbound)
   ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = [var.sg_ingress_ssh_cidr]
+  }
+
+  # Egress rule (all outbound traffic)
+  egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
@@ -12,6 +21,7 @@ resource "aws_security_group" "eksctl_host_sg" {
     Name = "${var.cluster_base_name}-HOST-SG"
   }
 }
+
 
 resource "aws_instance" "eksctl_host" {
   ami           = var.ami_id
