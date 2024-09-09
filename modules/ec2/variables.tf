@@ -38,3 +38,8 @@ variable "region" {
   description = "AWS Region"
   type        = string
 }
+
+variable "kubernetes_version" {
+  description = "kubernetes version for EKS"
+  type        = string
+}

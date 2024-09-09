@@ -27,7 +27,8 @@ resource "aws_instance" "eksctl_host" {
   }
 
   user_data = base64encode(templatefile("${path.module}/user_data.sh", {
-    cluster_base_name = var.cluster_base_name,
-    region            = var.region
+    cluster_base_name  = var.cluster_base_name,
+    region             = var.region,
+    kubernetes_version = var.kubernetes_version,
   }))
 }

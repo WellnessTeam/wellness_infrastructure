@@ -31,7 +31,8 @@ module "ec2" {
   key_name            = var.key_name
   sg_ingress_ssh_cidr = var.sg_ingress_ssh_cidr
   ami_id              = data.aws_ssm_parameter.latest_ami_id.value
-  region              = var.region # region 변수를 추가하여 모듈로 전달
+  region              = var.region
+  kubernetes_version  = var.kubernetes_version
 }
 module "s3_backend" {
   source         = "./modules/s3"
