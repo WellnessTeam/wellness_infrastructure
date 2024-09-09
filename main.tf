@@ -35,7 +35,7 @@ module "ec2" {
   # user_data 템플릿에 region 변수를 전달
   user_data = base64encode(templatefile("${path.module}/modules/ec2/user_data.sh", {
     cluster_base_name = var.cluster_base_name,
-    region            = var.region  # 기존 region 변수 사용
+    region            = var.region # 기존 region 변수 사용
   }))
 }
 module "s3_backend" {
