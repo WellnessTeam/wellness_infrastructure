@@ -18,7 +18,7 @@ resource "aws_instance" "eksctl_host" {
   instance_type = var.instance_type
   key_name      = var.key_name
 
-  subnet_id                   = var.public_subnet_id[0]
+  subnet_id                   = var.public_subnet_id
   vpc_security_group_ids      = [aws_security_group.eksctl_host_sg.id]
   associate_public_ip_address = true
 
