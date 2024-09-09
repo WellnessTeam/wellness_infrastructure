@@ -30,5 +30,6 @@ resource "aws_instance" "eksctl_host" {
     cluster_base_name  = var.cluster_base_name,
     aws_default_region = var.region,
     kubernetes_version = var.kubernetes_version,
+    timestamp          = timestamp()
   }))
 }
