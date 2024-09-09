@@ -26,9 +26,8 @@ resource "aws_instance" "eksctl_host" {
     Name = "${var.cluster_base_name}-bastion-EC2"
   }
 
-  # user_data 설정 (templatefile로 동적 변수를 사용)
   user_data = base64encode(templatefile("${path.module}/user_data.sh", {
-    cluster_base_name  = var.cluster_base_name,
-    aws_default_region = var.region
+    cluster_base_name = var.cluster_base_name,
+    region            = var.region
   }))
 }
