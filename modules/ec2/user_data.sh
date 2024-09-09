@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 호스트 이름 설정1
+# 호스트 이름 설정2
 hostnamectl --static set-hostname "${cluster_base_name}-bastion-EC2"
 
 # 편의성 설정
