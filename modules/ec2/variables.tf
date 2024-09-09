@@ -33,7 +33,8 @@ variable "ami_id" {
   type        = string
 }
 
-variable "user_data" {
-  description = "User data script"
+# 새로 추가된 region 변수
+variable "region" {
+  description = "AWS Region"
   type        = string
 }

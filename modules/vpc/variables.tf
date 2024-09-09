@@ -1,6 +1,6 @@
 variable "vpc_cidr" {
-    description = "CIDR block for the VPC"
-    type = string
+  description = "CIDR block for the VPC"
+  type        = string
 }
 
 variable "public_subnet_cidrs" {
@@ -16,12 +16,12 @@ variable "private_subnet_cidrs" {
 }
 
 variable "cluster_base_name" {
-    description = "Base name"
-    type = string
-    default = "wellness_eks"
+  description = "Base name"
+  type        = string
+  default     = "wellness_eks"
 }
 
 variable "availability_zones" {
-    description = "List of availability zones"
-    type = list(string)
+  description = "List of availability zones"
+  type        = list(string)
 }
