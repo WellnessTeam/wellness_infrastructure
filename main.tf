@@ -33,7 +33,17 @@ module "ec2" {
   ami_id              = data.aws_ssm_parameter.latest_ami_id.value
   region              = var.region
   kubernetes_version  = var.kubernetes_version
+  efs_id              = module.efs.efs_id
+  public_subnet_1     = module.vpc.public_subnet_ids[0]
+  public_subnet_2     = module.vpc.public_subnet_ids[1]
+  public_subnet_3     = module.vpc.public_subnet_ids[2]
+  private_subnet_1    = module.vpc.private_subnet_ids[0]
+  private_subnet_2    = module.vpc.private_subnet_ids[1]
+  private_subnet_3    = module.vpc.private_subnet_ids[2]
+  worker_node_instance_type = var.worker_node_instance_type
+  worker_node_count   = var.worker_node_count
 }
+
 module "s3_backend" {
   source         = "./modules/s3"
   s3_bucket_name = "wellness-infra-terraform"
