@@ -7,7 +7,3 @@ output "ec2_public_ip" {
   description = "EC2 Public IP Address"
   value       = aws_instance.eksctl_host.public_ip
 }
-
-output "public_subnet_ids" {
-  value = aws_subnet.public_subnets[*].id
-}
