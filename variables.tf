@@ -88,12 +88,6 @@ variable "private_subnet_cidrs" {
 }
 
 # RDS 관련 변수들
-variable "db_name" {
-  description = "The name of the database to create"
-  type        = string
-  default     = "eksdatabase"
-}
-
 variable "db_username" {
   description = "Username for the database"
   type        = string
@@ -104,4 +98,9 @@ variable "db_password" {
   description = "Password for the database"
   type        = string
   sensitive   = true
+}
+
+variable "rds_subnet_id_2" {
+  description = "The second subnet ID where RDS will be deployed"
+  type        = string
 }
