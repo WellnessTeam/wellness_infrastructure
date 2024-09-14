@@ -58,9 +58,8 @@ module "rds" {
   cluster_base_name  = var.cluster_base_name
   db_name            = var.db_name
   db_username        = var.db_name
-  dp_password        = var.db_password
+  db_password        = var.db_password
   vpc_cidr           = var.vpc_cidr
-  rds_subnet_id      = module.vpc.private_subnet_ids[0]
 }
 
 module "s3_backend" {
