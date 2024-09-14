@@ -60,7 +60,7 @@ module "rds" {
   db_username        = var.db_name
   db_password        = var.db_password
   vpc_cidr           = var.vpc_cidr
-  rds_subnet_id      = modules.vpc.private_subnet_ids[0]
+  rds_subnet_id      = module.vpc.private_subnet_ids[0]
 }
 
 module "s3_backend" {
