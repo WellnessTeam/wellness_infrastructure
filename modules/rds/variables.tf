@@ -14,22 +14,28 @@ variable "cluster_base_name" {
 }
 
 variable "db_name" {
-  description = "eksDB"
+  description = "Database name"
   type        = string
 }
 
 variable "db_username" {
-  description = "eks"
+  description = "Username for the database"
   type        = string
 }
 
 variable "db_password" {
-  description = "wellness"
+  description = "Password for the database"
   type        = string
   sensitive   = true
 }
 
 variable "vpc_cidr" {
   description = "CIDR block of the VPC"
+  type        = string
+}
+
+# 새로 추가한 rds_subnet_id 변수
+variable "rds_subnet_id" {
+  description = "The subnet ID where RDS will be deployed (only one)"
   type        = string
 }
