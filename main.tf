@@ -56,11 +56,11 @@ module "rds" {
   vpc_id             = module.vpc.vpc_id
   private_subnet_ids = module.vpc.private_subnet_ids
   cluster_base_name  = var.cluster_base_name
-  db_name            = var.db_name
   db_username        = var.db_name
   db_password        = var.db_password
   vpc_cidr           = var.vpc_cidr
   rds_subnet_id      = module.vpc.private_subnet_ids[0]
+  rds_subnet_id_2    = module.vpc.private_subnet_ids[1]
 }
 
 module "s3_backend" {
