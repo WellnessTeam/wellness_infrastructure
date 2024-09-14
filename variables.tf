@@ -1,6 +1,6 @@
 variable "cluster_base_name" {
   type    = string
-  default = "wellnessEks"
+  default = "wellness-eks"
 }
 
 variable "key_name" {
@@ -87,3 +87,21 @@ variable "private_subnet_cidrs" {
   default     = ["192.168.11.0/24", "192.168.12.0/24", "192.168.13.0/24"]
 }
 
+# RDS 관련 변수들
+variable "db_name" {
+  description = "The name of the database to create"
+  type        = string
+  default     = "eksdatabase"
+}
+
+variable "db_username" {
+  description = "Username for the database"
+  type        = string
+  default     = "admin" # 사용자 이름 기본값
+}
+
+variable "db_password" {
+  description = "Password for the database"
+  type        = string
+  sensitive   = true
+}
