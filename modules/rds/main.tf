@@ -35,8 +35,7 @@ resource "aws_db_instance" "postgres" {
   identifier             = "${var.cluster_base_name}-postgres"
   engine                 = "postgres"
   instance_class         = "db.t3.micro" # 원하는 인스턴스 타입으로 변경
-  allocated_storage      = 20            # 스토리지 크기
-  database_name          = var.db_name   # name을 database_name으로 수정
+  allocated_storage      = 20 # 스토리지 크기
   username               = var.db_username
   password               = var.db_password
   db_subnet_group_name   = aws_db_subnet_group.rds_subnet_group.name
