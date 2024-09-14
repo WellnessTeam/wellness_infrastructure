@@ -91,7 +91,7 @@ variable "private_subnet_cidrs" {
 variable "db_username" {
   description = "Username for the database"
   type        = string
-  default     = "admin" # 사용자 이름 기본값
+  default     = "eksadmin" # 사용자 이름 기본값
 }
 
 variable "db_password" {
