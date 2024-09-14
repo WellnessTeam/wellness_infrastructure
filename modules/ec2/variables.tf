@@ -3,11 +3,6 @@ variable "vpc_id" {
   type        = string
 }
 
-variable "public_subnet_id" {
-  description = "Public Subnet ID"
-  type        = string
-}
-
 variable "cluster_base_name" {
   description = "Base name for the cluster"
   type        = string
@@ -44,13 +39,11 @@ variable "kubernetes_version" {
   type        = string
 }
 
-# EFS ID 변수
 variable "efs_id" {
   description = "EFS ID"
   type        = string
 }
 
-# 추가된 퍼블릭 서브넷 ID들
 variable "public_subnet_1" {
   description = "First Public Subnet ID"
   type        = string
@@ -66,7 +59,6 @@ variable "public_subnet_3" {
   type        = string
 }
 
-# 추가된 프라이빗 서브넷 ID들
 variable "private_subnet_1" {
   description = "First Private Subnet ID"
   type        = string
@@ -82,7 +74,6 @@ variable "private_subnet_3" {
   type        = string
 }
 
-# 워커 노드 설정 관련 추가 변수
 variable "worker_node_instance_type" {
   description = "Instance type for worker nodes"
   type        = string
@@ -93,3 +84,25 @@ variable "worker_node_count" {
   type        = number
 }
 
+variable "iam_user_access_key_id" {
+  description = "IAM User - AWS Access Key ID"
+  type        = string
+  sensitive   = true
+}
+
+variable "iam_user_secret_access_key" {
+  description = "IAM User - AWS Secret Access Key"
+  type        = string
+  sensitive   = true
+}
+
+variable "worker_node_volume_size" {
+  description = "EKS worker node volume size"
+  type        = number
+  default     = 30
+}
+
+variable "public_subnet_id" {
+  description = "ID of the public subnet where the EC2 instance will be launched"
+  type        = string
+}

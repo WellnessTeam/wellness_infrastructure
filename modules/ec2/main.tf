@@ -22,7 +22,6 @@ resource "aws_security_group" "eksctl_host_sg" {
   }
 }
 
-
 resource "aws_instance" "eksctl_host" {
   ami           = var.ami_id
   instance_type = var.instance_type
@@ -40,17 +39,19 @@ resource "aws_instance" "eksctl_host" {
     cluster_base_name          = var.cluster_base_name,
     aws_default_region         = var.region,
     kubernetes_version         = var.kubernetes_version,
-    efs_id                     = module.efs.efs_id,
-    iam_user_access_key_id     = var.iam_user_access_key_id,
-    iam_user_secret_access_key = var.iam_user_secret_access_key,
-    public_subnet_1            = module.vpc.public_subnet_ids[0],
-    public_subnet_2            = module.vpc.public_subnet_ids[1],
-    public_subnet_3            = module.vpc.public_subnet_ids[2],
-    private_subnet_1           = module.vpc.private_subnet_ids[0],
-    private_subnet_2           = module.vpc.private_subnet_ids[1],
-    private_subnet_3           = module.vpc.private_subnet_ids[2],
+    timestamp                  = timestamp(),
+    efs_id                     = var.efs_id,
+    public_subnet_1            = var.public_subnet_1,
+    public_subnet_2            = var.public_subnet_2,
+    public_subnet_3            = var.public_subnet_3,
+    private_subnet_1           = var.private_subnet_1,
+    private_subnet_2           = var.private_subnet_2,
+    private_subnet_3           = var.private_subnet_3,
     worker_node_instance_type  = var.worker_node_instance_type,
     worker_node_count          = var.worker_node_count
-  }))
+    worker_node_volume_size    = var.worker_node_volume_size
+    iam_user_access_key_id     = var.iam_user_access_key_id,    # 추가
+    iam_user_secret_access_key = var.iam_user_secret_access_key # 추가 
 
+  }))
 }
