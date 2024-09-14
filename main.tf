@@ -33,7 +33,7 @@ module "ec2" {
   ami_id              = data.aws_ssm_parameter.latest_ami_id.value
   region              = var.region
   kubernetes_version  = var.kubernetes_version
-  
+
 
   # 추가된 변수들 전달
   efs_id                    = module.efs.efs_id
