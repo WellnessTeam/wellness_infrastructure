@@ -39,3 +39,7 @@ variable "rds_subnet_id" {
   description = "The subnet ID where RDS will be deployed (only one)"
   type        = string
 }
+
+variable "rds_subnet_id_2" {
+  description = "The second subnet ID where RDS will be deployed"
+  type        = string
