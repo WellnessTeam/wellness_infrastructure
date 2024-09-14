@@ -13,11 +13,6 @@ variable "cluster_base_name" {
   type        = string
 }
 
-variable "db_name" {
-  description = "Database name"
-  type        = string
-}
-
 variable "db_username" {
   description = "Username for the database"
   type        = string
@@ -37,5 +32,10 @@ variable "vpc_cidr" {
 # 새로 추가한 rds_subnet_id 변수
 variable "rds_subnet_id" {
   description = "The subnet ID where RDS will be deployed (only one)"
+  type        = string
+}
+
+variable "rds_subnet_id_2" {
+  description = "The second subnet ID where RDS will be deployed"
   type        = string
 }
