@@ -100,7 +100,3 @@ variable "db_password" {
   sensitive   = true
 }
 
-variable "rds_subnet_id_2" {
-  description = "The second subnet ID where RDS will be deployed"
-  type        = string
-}
