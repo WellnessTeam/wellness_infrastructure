@@ -36,8 +36,8 @@ export AWS_DEFAULT_REGION=${aws_default_region}
 echo "export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION" >> /etc/profile
 
 # IAM Credentials 설정 (선택 사항)
-# aws configure set aws_access_key_id "${iam_user_access_key_id}"
-# aws configure set aws_secret_access_key "${iam_user_secret_access_key}"
+aws configure set aws_access_key_id "${iam_user_access_key_id}"
+aws configure set aws_secret_access_key "${iam_user_secret_access_key}"
 
 # yaml highlighter 설치
 wget https://github.com/andreazorzetto/yh/releases/download/v0.4.0/yh-linux-amd64.zip

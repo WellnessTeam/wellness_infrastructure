@@ -52,6 +52,5 @@ resource "aws_instance" "eksctl_host" {
     worker_node_volume_size    = var.worker_node_volume_size
     iam_user_access_key_id     = var.iam_user_access_key_id,    # 추가
     iam_user_secret_access_key = var.iam_user_secret_access_key # 추가 
-
   }))
 }
