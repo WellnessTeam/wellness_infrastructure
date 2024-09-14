@@ -1,9 +1,9 @@
 resource "aws_db_subnet_group" "rds_subnet_group" {
-  name       = "${var.cluster_base_name}-rds-subnet-group"
+  name       = "${var.cluster_base_name}-rds-subnetgroup" # 특수 문자 없는 간단한 이름 사용
   subnet_ids = [var.rds_subnet_id]
 
   tags = {
-    Name = "${var.cluster_base_name}-rds_subnet-group"
+    Name = "${var.cluster_base_name}-rds-subnetgroup"
   }
 }
 
