@@ -1,6 +1,6 @@
 variable "cluster_base_name" {
   type    = string
-  default = "wellnessEks"
+  default = "wellness-eks"
 }
 
 variable "key_name" {
